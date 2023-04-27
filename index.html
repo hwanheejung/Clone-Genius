@@ -1,0 +1,1276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZENIUS</title>
+    <link rel="stylesheet" href="./styles/reset.css">
+    <link rel="stylesheet" href="./styles/main.css">
+    <style>
+        @media screen and (max-width: 1200px){
+            /* desktop */
+            .header-topBox, 
+            .header-bottomBox,
+            article,
+            .footer-top-container,
+            .footer-bottom-container{
+                width: 100%;
+                padding: 20px;
+            }
+            .charts-container,
+            .videos-container{
+                margin-right: 10px;
+                margin-left: 10px;
+            }
+            .videos-left{
+                width: min(75%, 876px);
+            }
+            .footer-top--box01{
+                width: 100%;
+            }
+        }
+        @media screen and (max-width: 1024px) {
+            /* laptop */
+            .latest-content{
+                width: min(23%, 252px);
+            }
+            .chart-data{
+                flex-direction: column;
+                justify-content: center;
+                gap: 5px;
+            }
+            .footer-btm-container .box02{
+                display: none;
+            }
+            .footer-top-container{
+                flex-wrap: wrap;
+            }
+            .footer-top--box01+div{
+                 width: 100%;
+                 padding-top: 50px;
+            }
+        }
+        @media screen and (max-width: 900px){
+            .header-bottomBox>nav a:nth-child(4) strong,
+            .btm-bar3,
+            .home-btm--news02,
+            .latest-row .latest-content:last-child
+            {
+                display: none;
+            }
+            .home-btm--video,
+            .home-btm--feature,
+            .home-btm--news01{
+                width: calc((100% - 120px) / 3);
+            }
+            .artist{
+                font-size: 16px;
+            }
+            .title_ {
+                padding-right: 10px;
+            }     
+            .latest-row .latest-content{
+                width: 30%;
+            }
+
+        }
+        @media screen and (max-width: 768px) {
+            /* tablet */
+            .header-container{
+                height: 40px;
+            }
+            .header-bottom-wrap,
+            .topbox-searchBox>input,
+            .topbox-login a:nth-child(2),
+            .latest-row .latest-content:nth-child(3){
+                display: none;
+            }
+            .topbox-searchBox{
+                position: relative;
+                background-color: transparent;
+            }
+            .topbox-searchBox::before{
+                content: '';
+                display: block;
+                width: 30px;
+                height: 30px;
+                position: absolute;
+                left: 6px;
+                top: 4px;
+                background: url(./images/icons/hamburger_icon.png) no-repeat;
+                background-size: 20px;
+                cursor: pointer;
+            }
+            .search-icon{
+                position: absolute;
+                right: 0;
+                top: 50%;
+                transform: translateY(-45%);
+            }
+        
+            .topbox-searchBox{
+                width: 60px;
+            }
+           
+            .home-top a{
+                flex-direction: column;
+            }
+            .home-top .home-top--feature{
+                width: 100%;
+                margin-bottom: 30px;
+            }
+            .feature-header .box01 .bar{
+                width: 660px;
+            }
+            .marquee{
+                margin-top: 0;
+            }
+            .marquee .marquee-container{
+                width: 80%;
+            }
+            .marquee .marquee-container img{
+                width: min(100%, 730px);
+            }
+            .home-container{
+                margin-top: 20px;
+            }
+            .home-top .home-top--pic{
+                width: min(100%, 668px);
+            }
+            .header-topBox{
+                position: relative;
+            }
+            .header-topBox h1{
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            .charts-row,
+            .rank{
+                font-size: 16px;
+            }
+            .title_ div:nth-child(2),
+            .hot,
+            .views{
+                font-size: 8px;
+            }
+            .title>div{
+                flex-direction: column;
+            }
+            .title_{
+                width: 100%;
+            }
+            .artist{
+                padding: 0 8px 0 20px;
+                width: 100%;
+            }
+            .charts-header{
+                flex-direction: column;
+            }
+            .selectBox-container{
+                margin: 30px 0;
+            }
+            .charts-header{
+                margin-bottom: 120px;
+            }
+            .charts-container{
+                margin-top: 20px;
+            }
+            .videos-contents{
+                flex-direction: column;
+            }
+            .videos-left,
+            .videos-right{
+                width: 100%;
+            }
+            .videos-right{
+                margin-top: 20px;
+            }
+            .latest-row .latest-content{
+                width: 45%;
+            }
+           
+            
+        }
+        @media screen and (max-width: 600px){
+            .home-bottom,
+            .comm-rank,
+            .comm-earned strong,
+            .latest-row .latest-content:not(:first-child){
+                display: none;
+            }
+            .home-top .home-top--pic{
+                width: min(100%, 554px);
+                height: 300px;
+                background-size: cover;
+            }
+            .charts-header h2,
+            .videos-header h2,
+            .latest-header h2{
+                font-size: 50px;
+            }
+            .community-header h2{
+                font-size: 30px;
+            }
+            .hot, .views{
+                padding-left: 5px;
+            }
+            .title{
+                overflow: hidden;
+            }
+            .rank{
+                margin-right: 10px;
+            }
+            .name, .earned{
+                font-size: 12px;
+            }
+            .community-btn{
+                flex-direction: column;
+                align-items: center;
+                margin-bottom: 30px;
+                gap: 20px;
+            }
+            .community-container{
+                margin-bottom: 0px;
+            }
+           
+            .latest-row .latest-content{
+                width: 100%;
+            }
+            .latest-content--pic{
+                background-size: contain;
+                height: 200px;
+            }
+            .latest-row{
+                gap: 20px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="header-top-wrap flex_center">
+                <div class="header-topBox">
+                    <div class="topbox-searchBox">
+                        <input type="text" placeholder="Search lyrics & more">
+                        <a href="#">
+                            <div class="search-icon">
+                                <svg viewBox="0 0 21.48 21.59">
+                                    <path d="M21.48 20.18L14.8 13.5a8.38 8.38 0 1 0-1.43 1.4l6.69 6.69zM2 8.31a6.32 6.32 0 1 1 6.32 6.32A6.32 6.32 0 0 1 2 8.31z"/>
+                                </svg>
+                            </div>
+                        </a>
+                    </div>
+                    <h1 data-text="zenius">zenius
+                        <!-- <a href="#"><img src="./images/icons/genius-logo.png" alt="genius-logo" width="127"></a> -->
+                    </h1>
+                    <div class="topbox-login">
+                        <a href="#"><span>SIGN UP</span></a>
+                        <a href="#"><span>SIGN IN</span></a>
+                    </div>
+                </div>
+            </div>
+            <div class="header-bottom-wrap flex_center">
+                <div class="header-bottomBox">
+                    <nav>
+                        <a href="#home"><span>FEATURED</span></a>
+                        <a href="#charts"><span>CHARTS</span></a>
+                        <a href="#videos"><span>VIDEOS</span></a>
+                        <a href="./promote.html" target="_blank"><span>PROMOTE <strong>YOUR MUSIC</strong></span></a>
+                        <div class="socialLinks">
+                            <div class="socialLinks-container">
+                                <a href="https://www.facebook.com/Genius/" target="_blank">
+                                    <svg viewBox="0 0 9.95 20">
+                                        <path d="M8.09 3.81c-1.4 0-1.58.84-1.58 1.67v1.3h3.35L9.49 11h-3v9H2.33v-9H0V6.88h2.42V3.81C2.42 1.3 3.81 0 6.6 0H10v3.81z"/>
+                                    </svg>
+                                </a>
+                                <a href="https://twitter.com/Genius" target="_blank">
+                                    <svg viewBox="0 0 20 16.43">
+                                        <path d="m20 1.89-2.3 2.16v.68a12.28 12.28 0 0 1-3.65 8.92c-5 5.13-13.1 1.76-14.05.81 0 0 3.78.14 5.81-1.76A4.15 4.15 0 0 1 2.3 9.86h2S.81 9.05.81 5.81A11 11 0 0 0 3 6.35S-.14 4.05 1.49.95a11.73 11.73 0 0 0 8.37 4.19A3.69 3.69 0 0 1 13.51 0a3.19 3.19 0 0 1 2.57 1.08 12.53 12.53 0 0 0 3.24-.81l-1.75 1.89A10.46 10.46 0 0 0 20 1.89z"/>
+                                    </svg>
+                                </a>
+                                <a href="https://www.instagram.com/genius/" target="_blank">
+                                    <svg viewBox="0 0 20 20">
+                                        <path d="M10 0c2.724 0 3.062 0 4.125.06.83.017 1.65.175 2.426.467.668.254 1.272.65 1.77 1.162.508.498.902 1.1 1.153 1.768a7.3 7.3 0 0 1 .467 2.424c.06 1.063.06 1.41.06 4.123 0 2.712-.06 3.06-.06 4.123a7.3 7.3 0 0 1-.467 2.424 5.111 5.111 0 0 1-2.922 2.92 7.312 7.312 0 0 1-2.425.468c-1.063.06-1.41.06-4.125.06-2.714 0-3.062-.06-4.125-.06a7.312 7.312 0 0 1-2.426-.467 4.895 4.895 0 0 1-1.77-1.162 4.877 4.877 0 0 1-1.153-1.768 7.3 7.3 0 0 1-.467-2.424C0 13.055 0 12.708 0 9.995c0-2.712 0-3.04.06-4.123a7.3 7.3 0 0 1 .467-2.424c.25-.667.645-1.27 1.153-1.77.5-.507 1.103-.9 1.77-1.15A7.252 7.252 0 0 1 5.874.06C6.958 0 7.285 0 10 0zm0 1.798h.01c-2.674 0-2.992.06-4.046.06-.626.02-1.245.15-1.83.377-.434.16-.828.414-1.152.746-.337.31-.602.69-.775 1.113a5.517 5.517 0 0 0-.348 1.858c-.06 1.064-.06 1.372-.06 4.045s.06 2.99.06 4.044a5.49 5.49 0 0 0 .347 1.857c.17.434.434.824.775 1.142.31.33.692.587 1.113.754.596.222 1.224.34 1.86.348 1.063.06 1.37.06 4.045.06 2.674 0 2.992-.06 4.046-.06a5.532 5.532 0 0 0 1.86-.348 3.316 3.316 0 0 0 1.897-1.897 5.532 5.532 0 0 0 .338-1.848c.06-1.064.06-1.372.06-4.045s-.06-2.99-.06-4.044a5.476 5.476 0 0 0-.347-1.827 3.1 3.1 0 0 0-.745-1.152 3.12 3.12 0 0 0-1.143-.774 5.523 5.523 0 0 0-1.86-.348c-1.063-.06-1.37-.06-4.045-.06zm0 3.1a5.11 5.11 0 0 1 5.109 5.106 5.11 5.11 0 0 1-10.22.001 5.109 5.109 0 0 1 5.11-5.107zm0 8.415c.878 0 1.72-.348 2.34-.97A3.306 3.306 0 0 0 10 6.695a3.309 3.309 0 1 0 0 6.618zm6.51-8.633a1.192 1.192 0 1 1-2.388 0 1.192 1.192 0 0 1 2.39 0z"/>
+                                    </svg>
+                                </a>
+                                <a href="https://www.youtube.com/genius" target="_blank">
+                                    <svg viewBox="0 0 20.01 14.07">
+                                        <path d="M19.81 3A4.32 4.32 0 0 0 19 1a2.86 2.86 0 0 0-2-.8C14.21 0 10 0 10 0S5.8 0 3 .2A2.87 2.87 0 0 0 1 1a4.32 4.32 0 0 0-.8 2S0 4.51 0 6.06V8a30 30 0 0 0 .2 3 4.33 4.33 0 0 0 .8 2 3.39 3.39 0 0 0 2.2.85c1.46.14 5.9.19 6.68.2h.4c1 0 4.35 0 6.72-.21a2.87 2.87 0 0 0 2-.84 4.32 4.32 0 0 0 .8-2 30.31 30.31 0 0 0 .2-3.21V6.28A30.31 30.31 0 0 0 19.81 3zM7.94 9.63V4l5.41 2.82z"/>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="marquee">
+        <div class="marquee-container">
+            <a href="#"><img src="./images/marquee.png" alt="framework" width="730"></a>
+        </div>
+    </div>
+    <section id="home" class="flex_center">
+        <article class="home-container">
+            <div class="home-top">
+                <a href="#" class="flex_between">
+                    <div class="home-top--feature">
+                        <div class="feature-header">
+                            <div class="box01">
+                                <span>FEATURE</span>
+                                <div class="bar">
+                                </div>
+                            </div>
+                            <div class="box02">
+                                <h2>Son Lux Discuss Scoring ‘Everything Everywhere All At Once,’ Working With André 3000, & More</h2>
+                            </div>
+                            <div class="box03">The trio behind the most-awarded film in history shares its creative process</div>
+                        </div>
+                        <div class="feature-author">
+                            <span>by worstofalltime / <strong>Apr 5 2023</strong></span>
+                        </div>
+                    </div>
+                    <div class="home-top--pic"></div>
+                </a>
+            </div>
+            <div class="home-bottom">
+                <div class="home-btm--video">
+                    <a href="#">
+                        <div class="home-btm--header">
+                            <span>VIDEO</span>
+                            <h2><a href="#">Watch Ovrkast.’s New Music Video for “TBH!”</a></h2>
+                        </div>
+                        <div class="home-btm--contents">
+                            <div class="btm-author">by ButterflyHoney / <strong>Apr 6 2023</strong></div>
+                            <div class="contents-video" style="background-image: url(./images/latest1.jpg);"></div>
+                        </div>
+                    </a>
+                </div>
+                <div class="btm-bar btm-bar1"></div>
+                <div class="home-btm--feature">
+                    <a href="#">
+                        <div class="home-btm--header">
+                            <span>FEATURE</span>
+                            <h2><a href="#">Zenius Community Playlist March 2023</a></h2>
+                        </div>
+                        <div class="home-btm--contents">
+                            <div class="btm-author">by ​worstofalltime / <strong>Apr 1 2023</strong></div>
+                            <div class="contents-video" style="background-image: url(./images/latest4.gif);"></div>
+                        </div>
+                    </a>
+                </div>
+                <div class="btm-bar btm-bar2"></div>
+                <div class="home-btm--news01">
+                    <a href="#">
+                        <div class="home-btm--header">
+                            <span>NEWS</span>
+                            <h2><a href="#">BabyTron & BLP Kosher Play Lyrical Tennis On New Song “Mazel Tron”</a></h2>
+                        </div>
+                        <div class="home-btm--contents">
+                            <div class="btm-author">by Ken Partridge / <strong>Apr 4 2023</strong></div>
+                            <div class="contents-video" style="background-image: url(./images/latest3.png);"></div>
+                        </div>
+                    </a>
+                </div>
+                <div class="btm-bar btm-bar3"></div>
+                <div class="home-btm--news02">
+                    <a href="#">
+                        <div class="home-btm--header">
+                            <span>NEWS</span>
+                            <h2><a href="#">Looking Back At The Top Hip-Hop Producer Of 2011</a></h2>
+                        </div>
+                        <div class="home-btm--contents">
+                            <div class="btm-author">by Leah Degrazia / <strong>Apr 1 2023</strong></div>
+                            <div class="contents-video" style="background-image: url(./images/latest5.png);"></div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </article>
+    </section>
+    <section id="charts" class="flex_center">
+        <article class="charts-container">
+            <div class="charts-header flex_between">
+                <h2>CHARTS</h2>
+                <a href="#">
+                    <div class="selectBox-container">
+                        <div class="select-text">SONGS / ALL GENRES / TODAY</div>
+                        <div class="select-arrow">
+                            <svg viewBox="0 0 21.32 10.91" width="14">
+                                <path d="M10.66 10.91L0 1.5 1.32 0l9.34 8.24L20 0l1.32 1.5-10.66 9.41"/>
+                            </svg>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <a href="#">
+                <div class="charts-row">
+                    <div class="rank">1</div>
+                    <div class="title">
+                        <img src="./images/Melanie.jpg" alt="POWDER" width="60">
+                        <div>
+                            <div class="title_">
+                                <div>POWDER</div>
+                                <div>LYRICS</div>
+                            </div>
+                            <div class="artist">Melanie Martinez</div>
+                        </div>
+                    </div>
+                    <div class="chart-data">
+                        <div class="hot">
+                            <svg viewBox="0 0 14 18" width="16">
+                                <path fill="#FF1464" d="M3.33494 0C3.33494 0 4.09484 1.88505 3.82154 4.2567C3.54779 6.62835 0.236392 9.669 0.250042 12.6792C0.263692 15.6894 5.14004 18 5.14004 18C5.14004 18 4.03634 16.0332 5.97389 12.7953C5.97389 12.7953 8.21519 14.3668 7.98599 15.7594C7.74464 17.2239 6.60914 18 6.60914 18C6.60914 18 13.4295 17.1792 13.4899 11.676C13.551 6.1722 9.49469 2.73315 9.49469 2.73315C9.49469 2.73315 9.94184 4.95165 8.72384 6.97485C8.72384 6.97485 5.67599 0.7605 3.33494 0ZM5.38739 4.30215C6.08369 5.3508 6.77669 6.5532 7.32239 7.66335L8.58509 10.2348L10.0626 7.78005C10.285 7.4103 10.4641 7.0371 10.6069 6.66915C11.3284 7.9623 11.9508 9.6618 11.9287 11.6584C11.9079 13.524 10.786 14.681 9.55904 15.3902C9.44159 13.4235 7.33139 11.8395 6.87059 11.5164L5.49629 10.5534L4.63394 11.9932C3.95714 13.1242 3.58724 14.1443 3.40754 15.03C2.53679 14.3027 1.81514 13.4493 1.81199 12.672C1.80614 11.4366 2.69579 9.9708 3.55619 8.5536C4.40819 7.1514 5.21219 5.8263 5.37299 4.4358C5.37824 4.39095 5.38274 4.34625 5.38739 4.30215Z"/>
+                            </svg>
+                            <span>203</span>
+                        </div>
+                        <div class="views">
+                            <svg viewBox="0 0 22 15.45" width="16">
+                                <path d="M11 2c4 0 7.26 3.85 8.6 5.72-1.34 1.87-4.6 5.73-8.6 5.73S3.74 9.61 2.4 7.73C3.74 5.86 7 2 11 2m0-2C4.45 0 0 7.73 0 7.73s4.45 7.73 11 7.73 11-7.73 11-7.73S17.55 0 11 0z"/>
+                                <path d="M11 5a2.73 2.73 0 1 1-2.73 2.73A2.73 2.73 0 0 1 11 5m0-2a4.73 4.73 0 1 0 4.73 4.73A4.73 4.73 0 0 0 11 3z"/>
+                            </svg>
+                            <span>53.4K</span>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            <a href="#">
+                <div class="charts-row">
+                    <div class="rank">2</div>
+                    <div class="title">
+                        <img src="./images/Melanie.jpg" alt="milk of the siren" width="60">
+                        <div>
+                            <div class="title_">
+                                <div>MILK OF THE SIREN</div>
+                                <div>LYRICS</div>
+                            </div>
+                            <div class="artist">Melanie Martinez</div>
+                        </div>                     
+                    </div>            
+                    <div class="chart-data">
+                        <div class="hot">
+                            <!-- <svg viewBox="0 0 14 18" width="16">
+                                <path fill="#FF1464" d="M3.33494 0C3.33494 0 4.09484 1.88505 3.82154 4.2567C3.54779 6.62835 0.236392 9.669 0.250042 12.6792C0.263692 15.6894 5.14004 18 5.14004 18C5.14004 18 4.03634 16.0332 5.97389 12.7953C5.97389 12.7953 8.21519 14.3668 7.98599 15.7594C7.74464 17.2239 6.60914 18 6.60914 18C6.60914 18 13.4295 17.1792 13.4899 11.676C13.551 6.1722 9.49469 2.73315 9.49469 2.73315C9.49469 2.73315 9.94184 4.95165 8.72384 6.97485C8.72384 6.97485 5.67599 0.7605 3.33494 0ZM5.38739 4.30215C6.08369 5.3508 6.77669 6.5532 7.32239 7.66335L8.58509 10.2348L10.0626 7.78005C10.285 7.4103 10.4641 7.0371 10.6069 6.66915C11.3284 7.9623 11.9508 9.6618 11.9287 11.6584C11.9079 13.524 10.786 14.681 9.55904 15.3902C9.44159 13.4235 7.33139 11.8395 6.87059 11.5164L5.49629 10.5534L4.63394 11.9932C3.95714 13.1242 3.58724 14.1443 3.40754 15.03C2.53679 14.3027 1.81514 13.4493 1.81199 12.672C1.80614 11.4366 2.69579 9.9708 3.55619 8.5536C4.40819 7.1514 5.21219 5.8263 5.37299 4.4358C5.37824 4.39095 5.38274 4.34625 5.38739 4.30215Z"/>
+                            </svg>
+                            <span>203</span> -->
+                        </div>
+                        <div class="views">
+                            <svg viewBox="0 0 22 15.45" width="16">
+                                <path d="M11 2c4 0 7.26 3.85 8.6 5.72-1.34 1.87-4.6 5.73-8.6 5.73S3.74 9.61 2.4 7.73C3.74 5.86 7 2 11 2m0-2C4.45 0 0 7.73 0 7.73s4.45 7.73 11 7.73 11-7.73 11-7.73S17.55 0 11 0z"/>
+                                <path d="M11 5a2.73 2.73 0 1 1-2.73 2.73A2.73 2.73 0 0 1 11 5m0-2a4.73 4.73 0 1 0 4.73 4.73A4.73 4.73 0 0 0 11 3z"/>
+                            </svg>
+                            <span>46.3K</span>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            <a href="#">
+                <div class="charts-row">
+                    <div class="rank">3</div>
+                    <div class="title">
+                        <img src="./images/cupid.jpg" alt="cupid" width="60">
+                        <div>
+                            <div class="title_">
+                                <div>Cupid(Twin version)</div>
+                                <div>LYRICS</div>
+                            </div>
+                            <div class="artist">FIFTY FIFTY</div>
+                        </div>
+                    </div>
+                    <div class="chart-data">
+                        <div class="hot">
+                            <svg viewBox="0 0 14 18" width="16">
+                                <path fill="#FF1464" d="M3.33494 0C3.33494 0 4.09484 1.88505 3.82154 4.2567C3.54779 6.62835 0.236392 9.669 0.250042 12.6792C0.263692 15.6894 5.14004 18 5.14004 18C5.14004 18 4.03634 16.0332 5.97389 12.7953C5.97389 12.7953 8.21519 14.3668 7.98599 15.7594C7.74464 17.2239 6.60914 18 6.60914 18C6.60914 18 13.4295 17.1792 13.4899 11.676C13.551 6.1722 9.49469 2.73315 9.49469 2.73315C9.49469 2.73315 9.94184 4.95165 8.72384 6.97485C8.72384 6.97485 5.67599 0.7605 3.33494 0ZM5.38739 4.30215C6.08369 5.3508 6.77669 6.5532 7.32239 7.66335L8.58509 10.2348L10.0626 7.78005C10.285 7.4103 10.4641 7.0371 10.6069 6.66915C11.3284 7.9623 11.9508 9.6618 11.9287 11.6584C11.9079 13.524 10.786 14.681 9.55904 15.3902C9.44159 13.4235 7.33139 11.8395 6.87059 11.5164L5.49629 10.5534L4.63394 11.9932C3.95714 13.1242 3.58724 14.1443 3.40754 15.03C2.53679 14.3027 1.81514 13.4493 1.81199 12.672C1.80614 11.4366 2.69579 9.9708 3.55619 8.5536C4.40819 7.1514 5.21219 5.8263 5.37299 4.4358C5.37824 4.39095 5.38274 4.34625 5.38739 4.30215Z"/>
+                            </svg>
+                            <span>71</span>
+                        </div>
+                        <div class="views">
+                            <svg viewBox="0 0 22 15.45" width="16">
+                                <path d="M11 2c4 0 7.26 3.85 8.6 5.72-1.34 1.87-4.6 5.73-8.6 5.73S3.74 9.61 2.4 7.73C3.74 5.86 7 2 11 2m0-2C4.45 0 0 7.73 0 7.73s4.45 7.73 11 7.73 11-7.73 11-7.73S17.55 0 11 0z"/>
+                                <path d="M11 5a2.73 2.73 0 1 1-2.73 2.73A2.73 2.73 0 0 1 11 5m0-2a4.73 4.73 0 1 0 4.73 4.73A4.73 4.73 0 0 0 11 3z"/>
+                            </svg>
+                            <span>373K</span>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            <a href="#">
+                <div class="charts-row">
+                    <div class="rank">4</div>
+                    <div class="title">
+                        <img src="./images/Melanie.jpg" alt="PLUTO" width="60">
+                        <div>
+                            <div class="title_">
+                                <div>PLUTO</div>
+                                <div>LYRICS</div>
+                            </div>
+                            <div class="artist">Melanie Martinez</div>
+                        </div>
+                    </div>
+                    <div class="chart-data">
+                        <div class="hot">
+                            <!-- <svg viewBox="0 0 14 18" width="16">
+                                <path fill="#FF1464" d="M3.33494 0C3.33494 0 4.09484 1.88505 3.82154 4.2567C3.54779 6.62835 0.236392 9.669 0.250042 12.6792C0.263692 15.6894 5.14004 18 5.14004 18C5.14004 18 4.03634 16.0332 5.97389 12.7953C5.97389 12.7953 8.21519 14.3668 7.98599 15.7594C7.74464 17.2239 6.60914 18 6.60914 18C6.60914 18 13.4295 17.1792 13.4899 11.676C13.551 6.1722 9.49469 2.73315 9.49469 2.73315C9.49469 2.73315 9.94184 4.95165 8.72384 6.97485C8.72384 6.97485 5.67599 0.7605 3.33494 0ZM5.38739 4.30215C6.08369 5.3508 6.77669 6.5532 7.32239 7.66335L8.58509 10.2348L10.0626 7.78005C10.285 7.4103 10.4641 7.0371 10.6069 6.66915C11.3284 7.9623 11.9508 9.6618 11.9287 11.6584C11.9079 13.524 10.786 14.681 9.55904 15.3902C9.44159 13.4235 7.33139 11.8395 6.87059 11.5164L5.49629 10.5534L4.63394 11.9932C3.95714 13.1242 3.58724 14.1443 3.40754 15.03C2.53679 14.3027 1.81514 13.4493 1.81199 12.672C1.80614 11.4366 2.69579 9.9708 3.55619 8.5536C4.40819 7.1514 5.21219 5.8263 5.37299 4.4358C5.37824 4.39095 5.38274 4.34625 5.38739 4.30215Z"/>
+                            </svg>
+                            <span>203</span> -->
+                        </div>
+                        <div class="views">
+                            <svg viewBox="0 0 22 15.45" width="16">
+                                <path d="M11 2c4 0 7.26 3.85 8.6 5.72-1.34 1.87-4.6 5.73-8.6 5.73S3.74 9.61 2.4 7.73C3.74 5.86 7 2 11 2m0-2C4.45 0 0 7.73 0 7.73s4.45 7.73 11 7.73 11-7.73 11-7.73S17.55 0 11 0z"/>
+                                <path d="M11 5a2.73 2.73 0 1 1-2.73 2.73A2.73 2.73 0 0 1 11 5m0-2a4.73 4.73 0 1 0 4.73 4.73A4.73 4.73 0 0 0 11 3z"/>
+                            </svg>
+                            <span>40.4K</span>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            <a href="#">
+                <div class="charts-row">
+                    <div class="rank">5</div>
+                    <div class="title">
+                        <img src="./images/sorrynotsorry.png" alt="sorrynotsorry" width="60">
+                        <div>
+                            <div class="title_">
+                                <div>SORRY NOT SORRY</div>
+                                <div>LYRICS</div>
+                            </div>
+                            <div class="artist">Tyler, The Creator</div>
+                        </div>
+                    </div>
+                    <div class="chart-data">
+                        <div class="hot">
+                            <!-- <svg viewBox="0 0 14 18" width="16">
+                                <path fill="#FF1464" d="M3.33494 0C3.33494 0 4.09484 1.88505 3.82154 4.2567C3.54779 6.62835 0.236392 9.669 0.250042 12.6792C0.263692 15.6894 5.14004 18 5.14004 18C5.14004 18 4.03634 16.0332 5.97389 12.7953C5.97389 12.7953 8.21519 14.3668 7.98599 15.7594C7.74464 17.2239 6.60914 18 6.60914 18C6.60914 18 13.4295 17.1792 13.4899 11.676C13.551 6.1722 9.49469 2.73315 9.49469 2.73315C9.49469 2.73315 9.94184 4.95165 8.72384 6.97485C8.72384 6.97485 5.67599 0.7605 3.33494 0ZM5.38739 4.30215C6.08369 5.3508 6.77669 6.5532 7.32239 7.66335L8.58509 10.2348L10.0626 7.78005C10.285 7.4103 10.4641 7.0371 10.6069 6.66915C11.3284 7.9623 11.9508 9.6618 11.9287 11.6584C11.9079 13.524 10.786 14.681 9.55904 15.3902C9.44159 13.4235 7.33139 11.8395 6.87059 11.5164L5.49629 10.5534L4.63394 11.9932C3.95714 13.1242 3.58724 14.1443 3.40754 15.03C2.53679 14.3027 1.81514 13.4493 1.81199 12.672C1.80614 11.4366 2.69579 9.9708 3.55619 8.5536C4.40819 7.1514 5.21219 5.8263 5.37299 4.4358C5.37824 4.39095 5.38274 4.34625 5.38739 4.30215Z"/>
+                            </svg>
+                            <span>203</span> -->
+                        </div>
+                        <div class="views">
+                            <svg viewBox="0 0 22 15.45" width="16">
+                                <path d="M11 2c4 0 7.26 3.85 8.6 5.72-1.34 1.87-4.6 5.73-8.6 5.73S3.74 9.61 2.4 7.73C3.74 5.86 7 2 11 2m0-2C4.45 0 0 7.73 0 7.73s4.45 7.73 11 7.73 11-7.73 11-7.73S17.55 0 11 0z"/>
+                                <path d="M11 5a2.73 2.73 0 1 1-2.73 2.73A2.73 2.73 0 0 1 11 5m0-2a4.73 4.73 0 1 0 4.73 4.73A4.73 4.73 0 0 0 11 3z"/>
+                            </svg>
+                            <span>285K</span>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            <a href="#">
+                <div class="charts-row">
+                    <div class="rank">6</div>
+                    <div class="title">
+                        <img src="./images/jisoo.jpg" alt="jisoo" width="60">
+                        <div>
+                            <div class="title_">
+                                <div>JISOO - 꽃(FLOWER)</div>
+                                <div>LYRICS</div>
+                            </div>
+                            <div class="artist">Zenius Romanizations</div>
+                        </div>
+                    </div>
+                    
+                    <div class="chart-data">
+                        <div class="hot">
+                            <!-- <svg viewBox="0 0 14 18" width="16">
+                                <path fill="#FF1464" d="M3.33494 0C3.33494 0 4.09484 1.88505 3.82154 4.2567C3.54779 6.62835 0.236392 9.669 0.250042 12.6792C0.263692 15.6894 5.14004 18 5.14004 18C5.14004 18 4.03634 16.0332 5.97389 12.7953C5.97389 12.7953 8.21519 14.3668 7.98599 15.7594C7.74464 17.2239 6.60914 18 6.60914 18C6.60914 18 13.4295 17.1792 13.4899 11.676C13.551 6.1722 9.49469 2.73315 9.49469 2.73315C9.49469 2.73315 9.94184 4.95165 8.72384 6.97485C8.72384 6.97485 5.67599 0.7605 3.33494 0ZM5.38739 4.30215C6.08369 5.3508 6.77669 6.5532 7.32239 7.66335L8.58509 10.2348L10.0626 7.78005C10.285 7.4103 10.4641 7.0371 10.6069 6.66915C11.3284 7.9623 11.9508 9.6618 11.9287 11.6584C11.9079 13.524 10.786 14.681 9.55904 15.3902C9.44159 13.4235 7.33139 11.8395 6.87059 11.5164L5.49629 10.5534L4.63394 11.9932C3.95714 13.1242 3.58724 14.1443 3.40754 15.03C2.53679 14.3027 1.81514 13.4493 1.81199 12.672C1.80614 11.4366 2.69579 9.9708 3.55619 8.5536C4.40819 7.1514 5.21219 5.8263 5.37299 4.4358C5.37824 4.39095 5.38274 4.34625 5.38739 4.30215Z"/>
+                            </svg>
+                            <span>203</span> -->
+                        </div>
+                        <div class="views">
+                            <svg viewBox="0 0 22 15.45" width="16">
+                                <path d="M11 2c4 0 7.26 3.85 8.6 5.72-1.34 1.87-4.6 5.73-8.6 5.73S3.74 9.61 2.4 7.73C3.74 5.86 7 2 11 2m0-2C4.45 0 0 7.73 0 7.73s4.45 7.73 11 7.73 11-7.73 11-7.73S17.55 0 11 0z"/>
+                                <path d="M11 5a2.73 2.73 0 1 1-2.73 2.73A2.73 2.73 0 0 1 11 5m0-2a4.73 4.73 0 1 0 4.73 4.73A4.73 4.73 0 0 0 11 3z"/>
+                            </svg>
+                            <span>60.7K</span>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            <a href="#">
+                <div class="charts-row">
+                    <div class="rank">7</div>
+                    <div class="title">
+                        <img src="./images/viva.jpg" alt="viva la vida" width="60">
+                        <div>
+                            <div class="title_">
+                                <div>Viva la Vida</div>
+                                <div>LYRICS</div>
+                            </div>
+                            <div class="artist">Coldplay</div>
+                        </div>
+                    </div>
+                    
+                    <div class="chart-data">
+                        <div class="hot">
+                            <!-- <svg viewBox="0 0 14 18" width="16">
+                                <path fill="#FF1464" d="M3.33494 0C3.33494 0 4.09484 1.88505 3.82154 4.2567C3.54779 6.62835 0.236392 9.669 0.250042 12.6792C0.263692 15.6894 5.14004 18 5.14004 18C5.14004 18 4.03634 16.0332 5.97389 12.7953C5.97389 12.7953 8.21519 14.3668 7.98599 15.7594C7.74464 17.2239 6.60914 18 6.60914 18C6.60914 18 13.4295 17.1792 13.4899 11.676C13.551 6.1722 9.49469 2.73315 9.49469 2.73315C9.49469 2.73315 9.94184 4.95165 8.72384 6.97485C8.72384 6.97485 5.67599 0.7605 3.33494 0ZM5.38739 4.30215C6.08369 5.3508 6.77669 6.5532 7.32239 7.66335L8.58509 10.2348L10.0626 7.78005C10.285 7.4103 10.4641 7.0371 10.6069 6.66915C11.3284 7.9623 11.9508 9.6618 11.9287 11.6584C11.9079 13.524 10.786 14.681 9.55904 15.3902C9.44159 13.4235 7.33139 11.8395 6.87059 11.5164L5.49629 10.5534L4.63394 11.9932C3.95714 13.1242 3.58724 14.1443 3.40754 15.03C2.53679 14.3027 1.81514 13.4493 1.81199 12.672C1.80614 11.4366 2.69579 9.9708 3.55619 8.5536C4.40819 7.1514 5.21219 5.8263 5.37299 4.4358C5.37824 4.39095 5.38274 4.34625 5.38739 4.30215Z"/>
+                            </svg>
+                            <span>203</span> -->
+                        </div>
+                        <div class="views">
+                            <svg viewBox="0 0 22 15.45" width="16">
+                                <path d="M11 2c4 0 7.26 3.85 8.6 5.72-1.34 1.87-4.6 5.73-8.6 5.73S3.74 9.61 2.4 7.73C3.74 5.86 7 2 11 2m0-2C4.45 0 0 7.73 0 7.73s4.45 7.73 11 7.73 11-7.73 11-7.73S17.55 0 11 0z"/>
+                                <path d="M11 5a2.73 2.73 0 1 1-2.73 2.73A2.73 2.73 0 0 1 11 5m0-2a4.73 4.73 0 1 0 4.73 4.73A4.73 4.73 0 0 0 11 3z"/>
+                            </svg>
+                            <span>3.2M</span>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            <a href="#">
+                <div class="charts-row">
+                    <div class="rank">8</div>
+                    <div class="title">
+                        <img src="./images/Melanie.jpg" alt="NYMPHOLOGY" width="60">
+                        <div>
+                            <div class="title_">
+                                <div>NYMPHOLOGY</div>
+                                <div>LYRICS</div>
+                            </div>
+                            <div class="artist">Melanie Martinez</div>
+                        </div>
+                    </div>
+                    
+                    <div class="chart-data">
+                        <div class="hot">
+                            <!-- <svg viewBox="0 0 14 18" width="16">
+                                <path fill="#FF1464" d="M3.33494 0C3.33494 0 4.09484 1.88505 3.82154 4.2567C3.54779 6.62835 0.236392 9.669 0.250042 12.6792C0.263692 15.6894 5.14004 18 5.14004 18C5.14004 18 4.03634 16.0332 5.97389 12.7953C5.97389 12.7953 8.21519 14.3668 7.98599 15.7594C7.74464 17.2239 6.60914 18 6.60914 18C6.60914 18 13.4295 17.1792 13.4899 11.676C13.551 6.1722 9.49469 2.73315 9.49469 2.73315C9.49469 2.73315 9.94184 4.95165 8.72384 6.97485C8.72384 6.97485 5.67599 0.7605 3.33494 0ZM5.38739 4.30215C6.08369 5.3508 6.77669 6.5532 7.32239 7.66335L8.58509 10.2348L10.0626 7.78005C10.285 7.4103 10.4641 7.0371 10.6069 6.66915C11.3284 7.9623 11.9508 9.6618 11.9287 11.6584C11.9079 13.524 10.786 14.681 9.55904 15.3902C9.44159 13.4235 7.33139 11.8395 6.87059 11.5164L5.49629 10.5534L4.63394 11.9932C3.95714 13.1242 3.58724 14.1443 3.40754 15.03C2.53679 14.3027 1.81514 13.4493 1.81199 12.672C1.80614 11.4366 2.69579 9.9708 3.55619 8.5536C4.40819 7.1514 5.21219 5.8263 5.37299 4.4358C5.37824 4.39095 5.38274 4.34625 5.38739 4.30215Z"/>
+                            </svg>
+                            <span>203</span> -->
+                        </div>
+                        <div class="views">
+                            <svg viewBox="0 0 22 15.45" width="16">
+                                <path d="M11 2c4 0 7.26 3.85 8.6 5.72-1.34 1.87-4.6 5.73-8.6 5.73S3.74 9.61 2.4 7.73C3.74 5.86 7 2 11 2m0-2C4.45 0 0 7.73 0 7.73s4.45 7.73 11 7.73 11-7.73 11-7.73S17.55 0 11 0z"/>
+                                <path d="M11 5a2.73 2.73 0 1 1-2.73 2.73A2.73 2.73 0 0 1 11 5m0-2a4.73 4.73 0 1 0 4.73 4.73A4.73 4.73 0 0 0 11 3z"/>
+                            </svg>
+                            <span>160.6K</span>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            <a href="#">
+                <div class="charts-row">
+                    <div class="rank">9</div>
+                    <div class="title">
+                        <img src="./images/sayyouwon't.jpg" alt="say you won't let go" width="60">
+                        <div>
+                            <div class="title_">
+                                <div>Say You Won't Let Go</div>
+                                <div>LYRICS</div>
+                            </div>
+                            <div class="artist">James Arthur</div>
+                        </div>
+                    </div>
+                    
+                    <div class="chart-data">
+                        <div class="hot">
+                            <!-- <svg viewBox="0 0 14 18" width="16">
+                                <path fill="#FF1464" d="M3.33494 0C3.33494 0 4.09484 1.88505 3.82154 4.2567C3.54779 6.62835 0.236392 9.669 0.250042 12.6792C0.263692 15.6894 5.14004 18 5.14004 18C5.14004 18 4.03634 16.0332 5.97389 12.7953C5.97389 12.7953 8.21519 14.3668 7.98599 15.7594C7.74464 17.2239 6.60914 18 6.60914 18C6.60914 18 13.4295 17.1792 13.4899 11.676C13.551 6.1722 9.49469 2.73315 9.49469 2.73315C9.49469 2.73315 9.94184 4.95165 8.72384 6.97485C8.72384 6.97485 5.67599 0.7605 3.33494 0ZM5.38739 4.30215C6.08369 5.3508 6.77669 6.5532 7.32239 7.66335L8.58509 10.2348L10.0626 7.78005C10.285 7.4103 10.4641 7.0371 10.6069 6.66915C11.3284 7.9623 11.9508 9.6618 11.9287 11.6584C11.9079 13.524 10.786 14.681 9.55904 15.3902C9.44159 13.4235 7.33139 11.8395 6.87059 11.5164L5.49629 10.5534L4.63394 11.9932C3.95714 13.1242 3.58724 14.1443 3.40754 15.03C2.53679 14.3027 1.81514 13.4493 1.81199 12.672C1.80614 11.4366 2.69579 9.9708 3.55619 8.5536C4.40819 7.1514 5.21219 5.8263 5.37299 4.4358C5.37824 4.39095 5.38274 4.34625 5.38739 4.30215Z"/>
+                            </svg>
+                            <span>203</span> -->
+                        </div>
+                        <div class="views">
+                            <svg viewBox="0 0 22 15.45" width="16">
+                                <path d="M11 2c4 0 7.26 3.85 8.6 5.72-1.34 1.87-4.6 5.73-8.6 5.73S3.74 9.61 2.4 7.73C3.74 5.86 7 2 11 2m0-2C4.45 0 0 7.73 0 7.73s4.45 7.73 11 7.73 11-7.73 11-7.73S17.55 0 11 0z"/>
+                                <path d="M11 5a2.73 2.73 0 1 1-2.73 2.73A2.73 2.73 0 0 1 11 5m0-2a4.73 4.73 0 1 0 4.73 4.73A4.73 4.73 0 0 0 11 3z"/>
+                            </svg>
+                            <span>4.5M</span>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            <a href="#">
+                <div class="charts-row">
+                    <div class="rank">10</div>
+                    <div class="title">
+                        <img src="./images/calmdown.jpg" alt="calm down" width="60">
+                        <div>
+                            <div class="title_">
+                                <div>Calm Down</div>
+                                <div>LYRICS</div>
+                            </div>
+                            <div class="artist">Rema</div>
+                        </div>
+                    </div>
+                    
+                    <div class="chart-data">
+                        <div class="hot">
+                            <!-- <svg viewBox="0 0 14 18" width="16">
+                                <path fill="#FF1464" d="M3.33494 0C3.33494 0 4.09484 1.88505 3.82154 4.2567C3.54779 6.62835 0.236392 9.669 0.250042 12.6792C0.263692 15.6894 5.14004 18 5.14004 18C5.14004 18 4.03634 16.0332 5.97389 12.7953C5.97389 12.7953 8.21519 14.3668 7.98599 15.7594C7.74464 17.2239 6.60914 18 6.60914 18C6.60914 18 13.4295 17.1792 13.4899 11.676C13.551 6.1722 9.49469 2.73315 9.49469 2.73315C9.49469 2.73315 9.94184 4.95165 8.72384 6.97485C8.72384 6.97485 5.67599 0.7605 3.33494 0ZM5.38739 4.30215C6.08369 5.3508 6.77669 6.5532 7.32239 7.66335L8.58509 10.2348L10.0626 7.78005C10.285 7.4103 10.4641 7.0371 10.6069 6.66915C11.3284 7.9623 11.9508 9.6618 11.9287 11.6584C11.9079 13.524 10.786 14.681 9.55904 15.3902C9.44159 13.4235 7.33139 11.8395 6.87059 11.5164L5.49629 10.5534L4.63394 11.9932C3.95714 13.1242 3.58724 14.1443 3.40754 15.03C2.53679 14.3027 1.81514 13.4493 1.81199 12.672C1.80614 11.4366 2.69579 9.9708 3.55619 8.5536C4.40819 7.1514 5.21219 5.8263 5.37299 4.4358C5.37824 4.39095 5.38274 4.34625 5.38739 4.30215Z"/>
+                            </svg>
+                            <span>203</span> -->
+                        </div>
+                        <div class="views">
+                            <svg viewBox="0 0 22 15.45" width="16">
+                                <path d="M11 2c4 0 7.26 3.85 8.6 5.72-1.34 1.87-4.6 5.73-8.6 5.73S3.74 9.61 2.4 7.73C3.74 5.86 7 2 11 2m0-2C4.45 0 0 7.73 0 7.73s4.45 7.73 11 7.73 11-7.73 11-7.73S17.55 0 11 0z"/>
+                                <path d="M11 5a2.73 2.73 0 1 1-2.73 2.73A2.73 2.73 0 0 1 11 5m0-2a4.73 4.73 0 1 0 4.73 4.73A4.73 4.73 0 0 0 11 3z"/>
+                            </svg>
+                            <span>522.8K</span>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            <div class="square-btn-wrap">
+                <div class="LoadMore">LOAD MORE</div>
+            </div>
+        </article>
+    </section>
+    <section id="videos" class="flex_center">
+        <article class="videos-container">
+            <div class="videos-header flex_center">
+                <h2>VIDEOS</h2>
+                <span>ZENIUS ORIGINAL SERIES</span>
+            </div>
+            <div class="videos-contents flex_between">
+                <div class="videos-left">
+                    <a href="#"><img src="./images/videos-left.jpg" alt="videos-left"></a>
+                </div>
+                <div class="videos-right">
+                    <div class="open-mic">
+                        <svg viewBox="0 0 1200 182.5" width="144">
+                            <path d="M94.2 39.6c-6 0-10.3 4.5-10.3 10.5v82.1c0 6 4.3 10.5 10.3 10.5s10.3-4.5 10.3-10.5V50.1c0-6-4.3-10.5-10.3-10.5zm161.1 0H245v41.3h10.3c6 0 10.3-4.5 10.3-10.5V50.1c.1-6-4.3-10.5-10.3-10.5z"/>
+                            <path d="M1179.1 0H20.9C9.4 0 0 9.4 0 20.9v140.6c0 11.6 9.4 20.9 20.9 20.9H1179c11.6 0 20.9-9.4 20.9-20.9V20.9c.1-11.5-9.3-20.9-20.8-20.9zM166.4 142.4c0 12.2-8.9 21-21 21H43c-12.2 0-21-8.9-21-21V40c0-12.2 8.9-21 21-21h102.3c12.2 0 21 8.9 21 21v102.4zm161.2-61.9c0 12.2-8.9 21-21 21H245v61.9h-61.9V19h123.4c12.2 0 21 8.9 21 21v40.5zm161-26.4h-82.5v21h82.5v32.2h-82.5v21.5l82.5-.4v35.1H365.2c-12.2 0-21-8.9-21-21V40c0-12.2 8.9-21 21-21h123.4v35.1zm161.1 109.3h-61.9V50.1c0-6-4.3-10.5-10.3-10.5s-10.3 4.5-10.3 10.5v113.3h-61.9V19h123.4c12.2 0 21 8.9 21 21v123.4zm293.1 0h-61.9V50.1c0-6-4.3-10.5-10.3-10.5s-10.3 4.5-10.3 10.5v113.3h-61.9V50.1c0-6-4.3-10.5-10.3-10.5s-10.3 4.5-10.3 10.5v113.3h-61.9V40c0-12.2 8.9-21 21-21h184.9c12.2 0 21 8.9 21 21v123.4zm78.9 0h-61.9V19h61.9v144.4zm160.8-92.8h-61.9V50.1c0-6-4.3-10.5-10.3-10.5-6 0-10.3 4.5-10.3 10.5v82.1c0 6 4.3 10.5 10.3 10.5 6 0 10.3-4.5 10.3-10.5v-20.4h61.9v30.5c0 12.2-8.9 21-21 21h-102.3c-12.2 0-21-8.9-21-21V40c0-12.2 8.9-21 21-21h102.3c12.2 0 21 8.9 21 21v30.6z"/>
+                        </svg>
+                    </div>
+                    <a href="#">
+                        <div class="videos-title">
+                            <h2>DD Osama Performs “Upnow” Live</h2>
+                            <span>Watch him perform the song on the latest episode of ‘Open Mic.’</span>
+                        </div>
+                        <div class="videos-author">
+                            <span>by ButterflyHoney / <strong>Apr 6 2023</strong></span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="square-btn-wrap">
+                <div class="LoadMore">LOAD MORE</div>
+            </div>
+        </article>
+    </section>
+    <section class="latest flex_center">
+        <article class="latest-container">
+            <div class="latest-header flex_center">
+                <h2>LATEST</h2>
+                <span>MOST RECENT NEWS</span>
+            </div>
+            <div class="latest-contents">
+                <div class="latest-row flex_between">
+                    <div class="latest-content">
+                        <a href="#">
+                            <div class="latest-content--header">
+                                <span>VIDEO</span>
+                                <div class="bar"></div>
+                            </div>
+                            <div class="latest-content--pic" style="background-image: url(./images/latest1.jpg);"></div>
+                            <h3><a href="#">Watch Ovrkast.’s New Music Video for “TBH!”</a></h3>
+                            <div class="latest-author"><span>by ButterflyHoney / <strong>Apr 6 2023</strong></span></div>
+
+                        </a>
+                    </div>
+                    <div class="latest-content">
+                        <a href="#">
+                            <div class="latest-content--header">
+                                <span>FEATURE</span>
+                                <div class="bar"></div>
+                            </div>
+                            <div class="latest-content--pic" style="background-image: url(./images/home-top.jpg);"></div>
+                            <h3><a href="#">Son Lux Discuss Scoring ‘Everything Everywhere All At Once,’ Working With André 3000, & More</a></h3>
+                            <div class="latest-author"><span>by ​worstofalltime / <strong>Apr 5 2023</strong></span></div>
+                        </a>
+                    </div>
+                    <div class="latest-content">
+                        <a href="#">
+                            <div class="latest-content--header">
+                                <span>NEWS</span>
+                                <div class="bar"></div>
+                            </div>
+                            <div class="latest-content--pic" style="background-image: url(./images/latest3.png);"></div>
+                            <h3><a href="#">BabyTron & BLP Kosher Play Lyrical Tennis On New Song “Mazel Tron”</a></h3>
+                            <div class="latest-author"><span>by Ken Partridge / <strong>Apr 4 2023</strong></span></div>
+                        </a>
+                    </div>
+                    <div class="latest-content">
+                        <a href="#">
+                            <div class="latest-content--header">
+                                <span>FEATURE</span>
+                                <div class="bar"></div>
+                            </div>
+                            <div class="latest-content--pic" style="background-image: url(./images/latest4.gif);"></div>
+                            <h3><a href="#">Zenius Community Playlist March 2023</a></h3>
+                            <div class="latest-author"><span>by ​worstofalltime / <strong>Apr 1 2023</strong></span></div>
+                        </a>
+                    </div>
+                </div>
+                <div class="latest-row flex_between">
+                    <div class="latest-content">
+                        <a href="#">
+                            <div class="latest-content--header">
+                                <span>NEWS</span>
+                                <div class="bar"></div>
+                            </div>
+                            <div class="latest-content--pic" style="background-image: url(./images/latest5.png);"></div>
+                            <h3><a href="#">Looking Back At The Top Hip-Hop Producer Of 2011</a></h3>
+                            <div class="latest-author"><span>by Leah Degrazia / <strong>Apr 1 2023</strong></span></div>
+                        </a>
+                    </div>
+                    <div class="latest-content">
+                        <a href="#">
+                            <div class="latest-content--header">
+                                <span>NEWS</span>
+                                <div class="bar"></div>
+                            </div>
+                            <div class="latest-content--pic" style="background-image: url(./images/latest6.png);"></div>
+                            <h3><a href="#">Read All The Lyrics To Tyler, The Creator’s New Deluxe Album ‘CALL ME IF YOU GET LOST: The Estate Sale’</a></h3>
+                            <div class="latest-author"><span>by Leah Degrazia / <strong>Apr 1 2023</strong></span></div>
+                        </a>
+                    </div>
+                    <div class="latest-content">
+                        <a href="#">
+                            <div class="latest-content--header">
+                                <span>NEWS</span>
+                                <div class="bar"></div>
+                            </div>
+                            <div class="latest-content--pic" style="background-image: url(./images/latest7.png);"></div>
+                            <h3><a href="#">Rod Wave Empathizes With A Heartbroken Woman On New Song “Fight the Feeling”</a></h3>
+                            <div class="latest-author"><span>by Ken Partridge / <strong>Mar 31 2023</strong></span></div>
+                        </a>
+                    </div>
+                    <div class="latest-content">
+                        <a href="#">
+                            <div class="latest-content--header">
+                                <span>NEWS</span>
+                                <div class="bar"></div>
+                            </div>
+                            <div class="latest-content--pic" style="background-image: url(./images/Melanie.jpg);"></div>
+                            <h3><a href="#">Read All The Lyrics To Melanie Martinez’s New Album ‘PORTALS’</a></h3>
+                            <div class="latest-author"><span>by Ken Partridge / <strong>Mar 31 2023</strong></span></div>
+                        </a>
+                    </div>
+                </div>
+                <div class="latest-row flex_between">
+                    <div class="latest-content">
+                        <a href="#">
+                            <div class="latest-content--header">
+                                <span>NEWS</span>
+                                <div class="bar"></div>
+                            </div>
+                            <div class="latest-content--pic" style="background-image: url(./images/latest9.png);"></div>
+                            <h3><a href="#">Read All The Lyrics To boygenius’ New Album ‘the record’</a></h3>
+                            <div class="latest-author"><span>by Leah Degrazia / <strong>Mar 31 2023</strong></span></div>
+                        </a>
+                    </div>
+                    <div class="latest-content">
+                        <a href="#">
+                            <div class="latest-content--header">
+                                <span>NEWS</span>
+                                <div class="bar"></div>
+                            </div>
+                            <div class="latest-content--pic" style="background-image: url(./images/latest10.jpg);"></div>
+                            <h3><a href="#">ALDAE Talks Co-Writing Miley Cyrus’ “Flowers,” The Formula For A Good Pop Song, & More</a></h3>
+                            <div class="latest-author"><span>by Leah Degrazia / <strong>Mar 31 2023</strong></span></div>
+                        </a>
+                    </div>
+                    <div class="latest-content">
+                        <a href="#">
+                            <div class="latest-content--header">
+                                <span>NEWS</span>
+                                <div class="bar"></div>
+                            </div>
+                            <div class="latest-content--pic" style="background-image: url(./images/latest11.jpg);"></div>
+                            <h3><a href="#">G-Eazy Returns From Hiatus With New Song “Tulips & Roses”</a></h3>
+                            <div class="latest-author"><span>by Ken Partridge / <strong>Mar 31 2023</strong></span></div>
+                        </a>
+                    </div>
+                    <div class="latest-content">
+                        <a href="#">
+                            <div class="latest-content--header">
+                                <span>NEWS</span>
+                                <div class="bar"></div>
+                            </div>
+                            <div class="latest-content--pic" style="background-image: url(./images/sorrynotsorry.png);"></div>
+                            <h3><a href="#">Tyler, The Creator Apologizes For A Whole Bunch Of Stuff On New Song ”SORRY NOT SORRY”</a></h3>
+                            <div class="latest-author"><span>by Leah Degrazia / <strong>Mar 30 2023</strong></span></div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="square-btn-wrap">
+                <div class="LoadMore">LOAD MORE</div>
+            </div>
+        </article>
+    </section>
+    <section class="community flex_center">
+        <article class="community-container">
+            <div class="community-header flex_center">
+                <h2>COMMUNITY</h2>
+                <span>ZENIUS’S COMMUNITY OF CONTRIBUTORS POWERS THE WORLD’S BIGGEST <br> COLLECTION OF SONG LYRICS AND MUSICAL KNOWLEDGE.</span>
+            </div>
+            <div class="community-btn">
+                <div class="square-btn-wrap">
+                    <div class="join">JOIN OUR COMMUNITY</div>
+                </div>
+                <div class="square-btn-wrap">
+                    <div class="learn">LEARN HOW ZENIUS WORKS</div>
+                </div>
+            </div>
+            <div class="community-contents">
+                <div class="comm-table-header flex_between">
+                    <div class="comm-rank">RANK</div>
+                    <div class="comm-scholars">TOP SCHOLARS TODAY</div>
+                    <div class="comm-earned">IQ <strong>EARNED TODAY</strong></div>
+                </div>
+                <a href="#">
+                    <div class="comm-row">
+                        <div class="rank">1</div>
+                        <div class="scholars">
+                            <img src="./images/Melanie.jpg" alt="POWDER" width="60">
+                            <div class="name">
+                                <div>Osh100</div>
+                                <div>
+                                    <span>CONTRIBUTOR</span>
+                                    <div style="fill: white;">
+                                        <svg viewBox="0 0 10 10" width="10">
+                                        <polygon points="5,1 10,9 0,9"/>
+                                        </svg>
+                                    </div>
+                    
+                                </div>
+                            </div>
+                        </div>
+                        <div class="earned">
+                            <span>5,435</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="#">
+                    <div class="comm-row">
+                        <div class="rank">2</div>
+                        <div class="scholars">
+                            <img src="./images/Melanie.jpg" alt="POWDER" width="60">
+                            <div class="name">
+                                <div>UnboxKings</div>
+                                <div>
+                                    <span>EDITOR</span>
+                                    <div style="fill: var(--yellow);">
+                                        <svg viewBox="0 0 10 10" width="10">
+                                            <path d="m5 0 1.43 3.1.1.23.25.04 3.22.46-2.33 2.35-.19.2.05.26L8.1 10 5.21 8.38 5 8.26l-.21.12L1.89 10l.58-3.36.05-.27-.19-.19L0 3.83l3.22-.46.24-.04.11-.24Z"/>
+                                        </svg>
+                                    </div>
+                    
+                                </div>
+                            </div>
+                        </div>
+                        <div class="earned">
+                            <span>4,811</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="#">
+                    <div class="comm-row">
+                        <div class="rank">3</div>
+                        <div class="scholars">
+                            <img src="./images/Melanie.jpg" alt="POWDER" width="60">
+                            <div class="name">
+                                <div>CatGirlsnCigarretes</div>
+                                <div>
+                                    <span>TRANSCRIBER</span>
+                                    <div style="fill: orange;">
+                                        <svg viewBox="0 0 10 10" width="10">
+                                            <rect x="1" y="1" width="8" height="8"/>
+                                        </svg>
+                                    </div>
+                    
+                                </div>
+                            </div>
+                        </div>
+                        <div class="earned">
+                            <span>3,724</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="#">
+                    <div class="comm-row">
+                        <div class="rank">4</div>
+                        <div class="scholars">
+                            <img src="./images/Melanie.jpg" alt="POWDER" width="60">
+                            <div class="name">
+                                <div>Chloe Conlon</div>
+                                <div>
+                                    <span>MODERATOR</span>
+                                    <div style="fill: rgb(118, 137, 232);">
+                                        <svg viewBox="0 0 10 10" width="10">
+                                            <polygon points="5,0 10,5 5,10 0,5"/>
+                                            </svg>
+                                    </div>
+                    
+                                </div>
+                            </div>
+                        </div>
+                        <div class="earned">
+                            <span>2,894</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="#">
+                    <div class="comm-row">
+                        <div class="rank">5</div>
+                        <div class="scholars">
+                            <img src="./images/Melanie.jpg" alt="POWDER" width="60">
+                            <div class="name">
+                                <div>Kristian_Lin</div>
+                                <div>
+                                    <span>EDITOR</span>
+                                    <div style="fill: var(--yellow);">
+                                        <svg viewBox="0 0 10 10" width="10">
+                                            <path d="m5 0 1.43 3.1.1.23.25.04 3.22.46-2.33 2.35-.19.2.05.26L8.1 10 5.21 8.38 5 8.26l-.21.12L1.89 10l.58-3.36.05-.27-.19-.19L0 3.83l3.22-.46.24-.04.11-.24Z"/>
+                                        </svg>
+                                    </div>
+                    
+                                </div>
+                            </div>
+                        </div>
+                        <div class="earned">
+                            <span>2,464</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="#">
+                    <div class="comm-row">
+                        <div class="rank">6</div>
+                        <div class="scholars">
+                            <img src="./images/Melanie.jpg" alt="POWDER" width="60">
+                            <div class="name">
+                                <div>Ferbinho</div>
+                                <div>
+                                    <span>MODERATOR</span>
+                                    <div style="fill: rgb(118, 137, 232);">
+                                        <svg viewBox="0 0 10 10" width="10">
+                                            <polygon points="5,0 10,5 5,10 0,5"/>
+                                            </svg>
+                                    </div>
+                    
+                                </div>
+                            </div>
+                        </div>
+                        <div class="earned">
+                            <span>1,809</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="#">
+                    <div class="comm-row">
+                        <div class="rank">7</div>
+                        <div class="scholars">
+                            <img src="./images/Melanie.jpg" alt="POWDER" width="60">
+                            <div class="name">
+                                <div>WriteNProppa</div>
+                                <div>
+                                    <span>STAFF</span>
+                                    <div style="    fill: rgb(176, 196, 222);">
+                                        <svg viewBox="0 0 10 10" width="10">
+                                            <polygon points="5,0 10,5 5,10 0,5"/>
+                                            </svg>
+                                    </div>
+                    
+                                </div>
+                            </div>
+                        </div>
+                        <div class="earned">
+                            <span>1,609</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="#">
+                    <div class="comm-row">
+                        <div class="rank">8</div>
+                        <div class="scholars">
+                            <img src="./images/Melanie.jpg" alt="POWDER" width="60">
+                            <div class="name">
+                                <div>Zav_el92</div>
+                                <div>
+                                    <span>CONTRIBUTOR</span>
+                                    <div style="fill: white;">
+                                        <svg viewBox="0 0 10 10" width="10">
+                                        <polygon points="5,1 10,9 0,9"/>
+                                        </svg>
+                                    </div>
+                    
+                                </div>
+                            </div>
+                        </div>
+                        <div class="earned">
+                            <span>1,065</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="#">
+                    <div class="comm-row">
+                        <div class="rank">9</div>
+                        <div class="scholars">
+                            <img src="./images/Melanie.jpg" alt="POWDER" width="60">
+                            <div class="name">
+                                <div>takuu</div>
+                                <div>
+                                    <span>MODERATOR</span>
+                                    <div style="fill: rgb(118, 137, 232);">
+                                        <svg viewBox="0 0 10 10" width="10">
+                                            <polygon points="5,0 10,5 5,10 0,5"/>
+                                            </svg>
+                                    </div>
+                    
+                                </div>
+                            </div>
+                        </div>
+                        <div class="earned">
+                            <span>1,538</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="#">
+                    <div class="comm-row">
+                        <div class="rank">10</div>
+                        <div class="scholars">
+                            <img src="./images/Melanie.jpg" alt="POWDER" width="60">
+                            <div class="name">
+                                <div>Cilvi</div>
+                                <div>
+                                    <span>CONTRIBUTOR</span>
+                                    <div style="fill: white;">
+                                        <svg viewBox="0 0 10 10" width="10">
+                                        <polygon points="5,1 10,9 0,9"/>
+                                        </svg>
+                                    </div>
+                    
+                                </div>
+                            </div>
+                        </div>
+                        <div class="earned">
+                            <span>1,415</span>
+                        </div>
+                    </div>
+                </a>
+
+            </div>
+            <div class="square-btn-wrap">
+                <div class="LoadMore">LOAD MORE</div>
+            </div>
+        </article>
+    </section>
+    <div class="footer-top flex_center">
+        <div class="footer-top-container flex_between">
+            <div class="footer-top--box01">
+                <span>Zenius is the world’s biggest collection of song lyrics and musical knowledge</span>
+                <div class="socialLinks">
+                    <div class="socialLinks-container flex_between">
+                        <a href="https://www.facebook.com/Genius/" target="_blank">
+                            <svg viewBox="0 0 9.95 20">
+                                <path d="M8.09 3.81c-1.4 0-1.58.84-1.58 1.67v1.3h3.35L9.49 11h-3v9H2.33v-9H0V6.88h2.42V3.81C2.42 1.3 3.81 0 6.6 0H10v3.81z"/>
+                            </svg>
+                        </a>
+                        <a href="https://twitter.com/Genius" target="_blank">
+                            <svg viewBox="0 0 20 16.43">
+                                <path d="m20 1.89-2.3 2.16v.68a12.28 12.28 0 0 1-3.65 8.92c-5 5.13-13.1 1.76-14.05.81 0 0 3.78.14 5.81-1.76A4.15 4.15 0 0 1 2.3 9.86h2S.81 9.05.81 5.81A11 11 0 0 0 3 6.35S-.14 4.05 1.49.95a11.73 11.73 0 0 0 8.37 4.19A3.69 3.69 0 0 1 13.51 0a3.19 3.19 0 0 1 2.57 1.08 12.53 12.53 0 0 0 3.24-.81l-1.75 1.89A10.46 10.46 0 0 0 20 1.89z"/>
+                            </svg>
+                        </a>
+                        <a href="https://www.instagram.com/genius/" target="_blank">
+                            <svg viewBox="0 0 20 20">
+                                <path d="M10 0c2.724 0 3.062 0 4.125.06.83.017 1.65.175 2.426.467.668.254 1.272.65 1.77 1.162.508.498.902 1.1 1.153 1.768a7.3 7.3 0 0 1 .467 2.424c.06 1.063.06 1.41.06 4.123 0 2.712-.06 3.06-.06 4.123a7.3 7.3 0 0 1-.467 2.424 5.111 5.111 0 0 1-2.922 2.92 7.312 7.312 0 0 1-2.425.468c-1.063.06-1.41.06-4.125.06-2.714 0-3.062-.06-4.125-.06a7.312 7.312 0 0 1-2.426-.467 4.895 4.895 0 0 1-1.77-1.162 4.877 4.877 0 0 1-1.153-1.768 7.3 7.3 0 0 1-.467-2.424C0 13.055 0 12.708 0 9.995c0-2.712 0-3.04.06-4.123a7.3 7.3 0 0 1 .467-2.424c.25-.667.645-1.27 1.153-1.77.5-.507 1.103-.9 1.77-1.15A7.252 7.252 0 0 1 5.874.06C6.958 0 7.285 0 10 0zm0 1.798h.01c-2.674 0-2.992.06-4.046.06-.626.02-1.245.15-1.83.377-.434.16-.828.414-1.152.746-.337.31-.602.69-.775 1.113a5.517 5.517 0 0 0-.348 1.858c-.06 1.064-.06 1.372-.06 4.045s.06 2.99.06 4.044a5.49 5.49 0 0 0 .347 1.857c.17.434.434.824.775 1.142.31.33.692.587 1.113.754.596.222 1.224.34 1.86.348 1.063.06 1.37.06 4.045.06 2.674 0 2.992-.06 4.046-.06a5.532 5.532 0 0 0 1.86-.348 3.316 3.316 0 0 0 1.897-1.897 5.532 5.532 0 0 0 .338-1.848c.06-1.064.06-1.372.06-4.045s-.06-2.99-.06-4.044a5.476 5.476 0 0 0-.347-1.827 3.1 3.1 0 0 0-.745-1.152 3.12 3.12 0 0 0-1.143-.774 5.523 5.523 0 0 0-1.86-.348c-1.063-.06-1.37-.06-4.045-.06zm0 3.1a5.11 5.11 0 0 1 5.109 5.106 5.11 5.11 0 0 1-10.22.001 5.109 5.109 0 0 1 5.11-5.107zm0 8.415c.878 0 1.72-.348 2.34-.97A3.306 3.306 0 0 0 10 6.695a3.309 3.309 0 1 0 0 6.618zm6.51-8.633a1.192 1.192 0 1 1-2.388 0 1.192 1.192 0 0 1 2.39 0z"/>
+                            </svg>
+                        </a>
+                        <a href="https://www.youtube.com/genius" target="_blank">
+                            <svg viewBox="0 0 20.01 14.07">
+                                <path d="M19.81 3A4.32 4.32 0 0 0 19 1a2.86 2.86 0 0 0-2-.8C14.21 0 10 0 10 0S5.8 0 3 .2A2.87 2.87 0 0 0 1 1a4.32 4.32 0 0 0-.8 2S0 4.51 0 6.06V8a30 30 0 0 0 .2 3 4.33 4.33 0 0 0 .8 2 3.39 3.39 0 0 0 2.2.85c1.46.14 5.9.19 6.68.2h.4c1 0 4.35 0 6.72-.21a2.87 2.87 0 0 0 2-.84 4.32 4.32 0 0 0 .8-2 30.31 30.31 0 0 0 .2-3.21V6.28A30.31 30.31 0 0 0 19.81 3zM7.94 9.63V4l5.41 2.82z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="flex_between">
+                <div class="footer-top--box02">
+                    <div>
+                        <ul>
+                            <li><a href="#">About Zenius</a></li>
+                            <li><a href="#">Contributor Guidelines</a></li>
+                            <li><a href="#">Press</a></li>
+                            <li><a href="#">Shop</a></li>
+                            <li><a href="#">Advertise</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                        </ul>
+                    </div>
+                    <div>© 2023 ML Zenius Holdings, LLC</div>
+                </div>
+                <div class="footer-top--box03">
+                    <div>
+                        <ul>
+                            <li><a href="#">Licensing</a></li>
+                            <li><a href="#">Jobs</a></li>
+                            <li><a href="#">Developers</a></li>
+                            <li><a href="#">Copyright Policy</a></li>
+                            <li><a href="#">Contact Us</a></li>
+                            <li><a href="#">Sign In</a></li>
+                            <li><a href="#">Do Not Sell My Personal Information</a></li>
+                        </ul>
+                    </div>
+                    <div>Terms of Use</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-btm flex_center">
+        <div class="footer-btm-container">
+            <div class="box01">
+                <a href="#"><span>VERIFIED ARTISTS</span></a>
+                <span>•</span>
+                <span>All ARTISTS:</span>
+                <div class="allArtists">
+                    <a href="#"><span>A</span></a>
+                    <a href="#"><span>B</span></a>
+                    <a href="#"><span>C</span></a>
+                    <a href="#"><span>D</span></a>
+                    <a href="#"><span>E</span></a>
+                    <a href="#"><span>F</span></a>
+                    <a href="#"><span>G</span></a>
+                    <a href="#"><span>H</span></a>
+                    <a href="#"><span>I</span></a>
+                    <a href="#"><span>J</span></a>
+                    <a href="#"><span>K</span></a>
+                    <a href="#"><span>L</span></a>
+                    <a href="#"><span>M</span></a>
+                    <a href="#"><span>N</span></a>
+                    <a href="#"><span>O</span></a>
+                    <a href="#"><span>P</span></a>
+                    <a href="#"><span>Q</span></a>
+                    <a href="#"><span>R</span></a>
+                    <a href="#"><span>X</span></a>
+                    <a href="#"><span>T</span></a>
+                    <a href="#"><span>U</span></a>
+                    <a href="#"><span>V</span></a>
+                    <a href="#"><span>W</span></a>
+                    <a href="#"><span>X</span></a>
+                    <a href="#"><span>Y</span></a>
+                    <a href="#"><span>Z</span></a>
+                    <a href="#"><span>#</span></a>
+                </div>
+            </div>
+            <div class="box02">
+                <span>HOT SONGS:</span>
+                <span>SEARCH & RESCUE</span>
+                <span>•</span>
+                <span>HAPPY</span>
+                <span>•</span>
+                <span>IL MALE CHE MI FAI</span>
+                <span>•</span>
+                <span>RUNNING</span>
+                <span>•</span>
+                <span>CUPID (TWIN VERSION)</span>
+                <span>•</span>
+                <span>VIEW ALL</span>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
