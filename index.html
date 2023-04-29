@@ -79,8 +79,9 @@
             /* tablet */
             .header-container{
                 height: 40px;
+                overflow: hidden;
             }
-            .header-bottom-wrap,
+            
             .topbox-searchBox>input,
             .topbox-login a:nth-child(2),
             .latest-row .latest-content:nth-child(3){
@@ -90,18 +91,55 @@
                 position: relative;
                 background-color: transparent;
             }
-            .topbox-searchBox::before{
-                content: '';
+            .hamburger{
                 display: block;
-                width: 30px;
-                height: 30px;
                 position: absolute;
-                left: 6px;
-                top: 4px;
-                background: url(./images/icons/hamburger_icon.png) no-repeat;
-                background-size: 20px;
-                cursor: pointer;
             }
+            .hamburger.active .hbg-bar:nth-child(2){
+                opacity: 0;
+            }
+            .hamburger.active .hbg-bar:nth-child(1){
+                transform: translateY(7px) rotate(45deg);
+            }
+            .hamburger.active .hbg-bar:nth-child(3){
+                transform: translateY(-7px) rotate(-45deg);
+            }
+            .header-container.active{
+                position: fixed;
+            }
+            .header-bottomBox nav{
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                position: fixed;
+                width: 100%;
+                left: -100%;
+                top: 40px;
+                gap: 0;
+                text-align: center;
+                line-height: 30px;
+                transition: 0.3s;
+                background-color: black;
+                height: 100vh;
+            }
+            .header-bottomBox nav>a:nth-child(2n){
+                border-left: none;
+                border-right: none;
+            }
+            .header-bottomBox nav>a, .socialLinks{
+                width: 100%;
+                border-bottom: 1px solid white;
+            
+            }
+            .socialLinks{
+                display: flex;
+                justify-content: center;
+            }
+            .header-bottomBox nav.active{
+                left: 0;
+            }
+
+
             .search-icon{
                 position: absolute;
                 right: 0;
@@ -270,6 +308,11 @@
                     <div class="topbox-login">
                         <a href="#"><span>SIGN UP</span></a>
                         <a href="#"><span>SIGN IN</span></a>
+                    </div>
+                    <div class="hamburger">
+                        <span class="hbg-bar"></span>
+                        <span class="hbg-bar"></span>
+                        <span class="hbg-bar"></span>
                     </div>
                 </div>
             </div>
@@ -1271,6 +1314,6 @@
             </div>
         </div>
     </div>
-
+    <script src="./scripts/main.js"></script>
 </body>
 </html>

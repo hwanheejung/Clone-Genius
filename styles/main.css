@@ -4,7 +4,7 @@ body{
 }
 .header-topBox,
 .header-bottomBox{
-    width: 1188px;
+    width: 1188px; 
 }
 .header-container{
     width: 100%;
@@ -37,6 +37,18 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.hamburger{
+    display: none;
+    cursor: pointer;
+}
+.hbg-bar{
+    display: block;
+    width: 20px;
+    height: 2px;
+    margin: 5px 0;
+    transition: all 0.3s ease;
+    background-color: black;
 }
 .topbox-searchBox{
     width: 220px;
@@ -92,11 +104,13 @@ body{
     height: 23px;
     padding: 0 2px 0 8px; 
     border: none;
+    outline: none;
 }
 .topbox-searchBox input::placeholder{
     color: #000;
     font-weight: 600;
     font-size: 14px;
+    opacity: 0.5;
 }
 .topbox-searchBox .search-icon{
     width: 30px;
