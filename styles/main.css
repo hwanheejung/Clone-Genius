@@ -780,13 +780,11 @@ article{
     .header-bottomBox nav>a, .socialLinks{
         width: 100%;
         border-bottom: 1px solid white;
+        
     }
     .socialLinks{
         display: flex;
-        justify-content: flex-start;
-    }
-    .socialLinks-container{
-        padding-bottom: 20px;
+        justify-content: center;
     }
     .header-bottomBox nav.active{
         left: 0;
@@ -879,8 +877,6 @@ article{
     .latest-row .latest-content{
         width: 45%;
     }
-    
-    
 }
 @media screen and (max-width: 600px){
     .home-bottom,
