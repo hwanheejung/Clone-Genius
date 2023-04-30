@@ -141,7 +141,7 @@ body{
     color: var(--yellow);
 }
 .header-bottomBox span,
-.socialLinks{
+.header-bottomBox .socialLinks{
     padding: 0 36px;
 }
 .socialLinks-container{
@@ -321,6 +321,7 @@ article{
     height: 77px;
     font-size: 24px;
     justify-content: space-between;
+    align-items: center;
     border-bottom: 2px solid #E9E9E9;
     position: relative;
 }
@@ -777,12 +778,12 @@ article{
         border-left: none;
         border-right: none;
     }
-    .header-bottomBox nav>a, .socialLinks{
+    .header-bottomBox nav>a, .header-bottomBox .socialLinks{
         width: 100%;
         border-bottom: 1px solid white;
         
     }
-    .socialLinks{
+    .header-bottomBox .socialLinks{
         display: flex;
         justify-content: center;
     }
