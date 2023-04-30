@@ -41,6 +41,7 @@ body{
 .hamburger{
     display: none;
     cursor: pointer;
+    flex-direction: column;
 }
 .hbg-bar{
     display: block;
@@ -656,4 +657,281 @@ article{
 }
 .footer-btm-container .box01 .allArtists span{
     padding: 0 2px;
+}
+
+@media screen and (max-width: 1200px){
+    /* desktop */
+    .header-topBox, 
+    .header-bottomBox,
+    article,
+    .footer-top-container,
+    .footer-bottom-container{
+        width: 100%;
+        padding: 20px;
+    }
+    .charts-container,
+    .videos-container{
+        margin-right: 10px;
+        margin-left: 10px;
+    }
+    .videos-left{
+        width: min(75%, 876px);
+    }
+    .footer-top--box01{
+        width: 100%;
+    }
+}
+@media screen and (max-width: 1024px) {
+    /* laptop */
+    .latest-content{
+        width: min(23%, 252px);
+    }
+    .chart-data{
+        flex-direction: column;
+        justify-content: center;
+        gap: 5px;
+    }
+    .footer-btm-container .box02{
+        display: none;
+    }
+    .footer-top-container{
+        flex-wrap: wrap;
+    }
+    .footer-top--box01+div{
+            width: 100%;
+            padding-top: 50px;
+    }
+}
+@media screen and (max-width: 900px){
+    .header-bottomBox>nav a:nth-child(4) strong,
+    .btm-bar3,
+    .home-btm--news02,
+    .latest-row .latest-content:last-child
+    {
+        display: none;
+    }
+    .home-btm--video,
+    .home-btm--feature,
+    .home-btm--news01{
+        width: calc((100% - 120px) / 3);
+    }
+    .artist{
+        font-size: 16px;
+    }
+    .title_ {
+        padding-right: 10px;
+    }     
+    .latest-row .latest-content{
+        width: 30%;
+    }
+
+}
+@media screen and (max-width: 768px) {
+    /* tablet */
+    .header-container{
+        height: 40px;
+        overflow: hidden;
+    }
+    
+    .topbox-searchBox>input,
+    .topbox-login a:nth-child(2),
+    .latest-row .latest-content:nth-child(3){
+        display: none;
+    }
+    .topbox-searchBox{
+        position: relative;
+        background-color: transparent;
+    }
+    .hamburger{
+        display: block;
+        position: absolute;
+    }
+    .hamburger.active .hbg-bar:nth-child(2){
+        opacity: 0;
+    }
+    .hamburger.active .hbg-bar:nth-child(1){
+        transform: translateY(7px) rotate(45deg);
+    }
+    .hamburger.active .hbg-bar:nth-child(3){
+        transform: translateY(-7px) rotate(-45deg);
+    }
+    .header-container.active{
+        position: fixed;
+    }
+    .header-bottomBox nav{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        position: fixed;
+        width: 100%;
+        left: -100%;
+        top: 40px;
+        gap: 0;
+        text-align: center;
+        line-height: 30px;
+        transition: 0.3s;
+        background-color: black;
+        height: 100vh;
+    }
+    .header-bottomBox nav>a:nth-child(2n){
+        border-left: none;
+        border-right: none;
+    }
+    .header-bottomBox nav>a, .socialLinks{
+        width: 100%;
+        border-bottom: 1px solid white;
+    }
+    .socialLinks{
+        display: flex;
+        justify-content: flex-start;
+    }
+    .socialLinks-container{
+        padding-bottom: 20px;
+    }
+    .header-bottomBox nav.active{
+        left: 0;
+    }
+    .search-icon{
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-45%);
+    }
+
+    .topbox-searchBox{
+        width: 60px;
+    }
+    
+    .home-top a{
+        flex-direction: column;
+    }
+    .home-top .home-top--feature{
+        width: 100%;
+        margin-bottom: 30px;
+    }
+    .feature-header .box01 .bar{
+        width: 660px;
+    }
+    .marquee{
+        margin-top: 0;
+    }
+    .marquee .marquee-container{
+        width: 80%;
+    }
+    .marquee .marquee-container img{
+        width: min(100%, 730px);
+    }
+    .home-container{
+        margin-top: 20px;
+    }
+    .home-top .home-top--pic{
+        width: min(100%, 668px);
+    }
+    .header-topBox{
+        position: relative;
+    }
+    .header-topBox h1{
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .charts-row,
+    .rank{
+        font-size: 16px;
+    }
+    .title_ div:nth-child(2),
+    .hot,
+    .views{
+        font-size: 8px;
+    }
+    .title>div{
+        flex-direction: column;
+    }
+    .title_{
+        width: 100%;
+    }
+    .artist{
+        padding: 0 8px 0 20px;
+        width: 100%;
+    }
+    .charts-header{
+        flex-direction: column;
+    }
+    .selectBox-container{
+        margin: 30px 0;
+    }
+    .charts-header{
+        margin-bottom: 120px;
+    }
+    .charts-container{
+        margin-top: 20px;
+    }
+    .videos-contents{
+        flex-direction: column;
+    }
+    .videos-left,
+    .videos-right{
+        width: 100%;
+    }
+    .videos-right{
+        margin-top: 20px;
+    }
+    .latest-row .latest-content{
+        width: 45%;
+    }
+    
+    
+}
+@media screen and (max-width: 600px){
+    .home-bottom,
+    .comm-rank,
+    .comm-earned strong,
+    .latest-row .latest-content:not(:first-child){
+        display: none;
+    }
+    .home-top .home-top--pic{
+        width: min(100%, 554px);
+        height: 300px;
+        background-size: cover;
+    }
+    .charts-header h2,
+    .videos-header h2,
+    .latest-header h2{
+        font-size: 50px;
+    }
+    .community-header h2{
+        font-size: 30px;
+    }
+    .hot, .views{
+        padding-left: 5px;
+    }
+    .title{
+        overflow: hidden;
+    }
+    .rank{
+        margin-right: 10px;
+    }
+    .name, .earned{
+        font-size: 12px;
+    }
+    .community-btn{
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 30px;
+        gap: 20px;
+    }
+    .community-container{
+        margin-bottom: 0px;
+    }
+    
+    .latest-row .latest-content{
+        width: 100%;
+    }
+    .latest-content--pic{
+        background-size: contain;
+        height: 200px;
+    }
+    .latest-row{
+        gap: 20px;
+    }
 }

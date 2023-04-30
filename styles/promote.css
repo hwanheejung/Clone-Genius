@@ -7,16 +7,16 @@ footer{
     background-color: #000;
 }
 article{
-    width: 1340px;
+    width: min(1340px, 100%);
     margin-top: 80px;
 }
 .header-container{
-    width: 1340px;
+    width: min(1340px, 100%);
     height: 65px;
     margin: 20px 50px;
     align-items: center;
     gap: 25px;
-}
+} 
 .header-container h1{
     height: 65px;
     padding: 7.5px;
@@ -25,6 +25,8 @@ article{
     animation: animate--promote-logo_2 1s;
     animation-delay: 2.5s;
     animation-fill-mode: forwards;
+    flex-shrink: 0;
+
 }
 .header-container h1 div:nth-child(1){
     font-size: 30px;
@@ -79,12 +81,28 @@ article{
         color: #333;
         text-shadow: none;
     }
-
+}
+.hamburger{
+    width: 40px;
+    height: 40px;
+    display: none;
+    cursor: pointer;
+    margin-left: 20px;
+}
+.hbg-bar{
+    display: block;
+    width: 20px;
+    height: 2px;
+    margin: 5px 0;
+    transition: all 0.3s ease;
+    background-color: #fff;
+    transform: translate(50%, 6px);
 }
 .header-container nav{
     color: #fff;
     font-size: 14px;
     display: flex;
+    flex-shrink: 0;
 }
 .header-container nav a{
     padding: 12px;
@@ -102,7 +120,7 @@ article{
     text-decoration-thickness: 2px;
 }
 
-.header-container>div{
+.header-container>div:not(.hamburger){
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -129,9 +147,8 @@ article{
     height: 450px;
 }
 .banner-container{
-    width: 1340px;
+    width: min(1340px, 100%);
     height: 350px;
-    /* background-color: aliceblue; */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -162,7 +179,9 @@ article{
     box-shadow: 0 0 0 1px white;
 }
 /* advertise */
-
+.advertise_box{
+    width: 100%;
+}
 .advertise h2,
 .enterprise h2{
     display: inline-block;
@@ -172,9 +191,14 @@ article{
     font-size: 34px;
     text-align: center;
 }
+.advertise_box .row01, 
+.advertise_box .row02{
+    width: 100%;
+    padding: 0 20px;
+} 
 .advertise_box .box1,
 .advertise_box .box2{
-    width: 410px;
+    width: 30%;
     height: 164px;
     background-color: aliceblue;
     overflow: hidden;
@@ -185,13 +209,27 @@ article{
 .advertise_box .row01{
     margin-bottom: 50px;
 }
+.advertise_box .box1,
+.advertise_box .box2{
+    background-repeat: repeat-x;
+    background-size: cover;
+    background-position: center center;
+}
+.advertise_box .box11{background-image: url(../images/promote/Stat_1_550x.png);}
+.advertise_box .box12{background-image: url(../images/promote/Stat_2_550x.png);}
+.advertise_box .box13{background-image: url(../images/promote/Stat_3_550x.png);}
+.advertise_box .box21{background-image: url(../images/promote/IG_thin_550x.png);}
+.advertise_box .box22{background-image: url(../images/promote/YouTube_thin_550x.png);}
+.advertise_box .box23{background-image: url(../images/promote/TikTok_thin_550x.png);}
+
 .promote_box .row01,
 .promote_box .row02,
 .lyrics_box .row01,
 .lyrics_box .row02{
     display: flex;
-    gap: 10px;
-    padding-bottom: 70px;
+    justify-content: space-between;
+    padding: 0 20px 70px 20px;
+    width: 100%;
 }
 .promote h3,
 .lyrics h3{
@@ -205,29 +243,59 @@ article{
 .lyrics_box .box2{
     color: #fff;
 }
+.promote_box .box1,
+.lyrics_box .box1{
+    width: 33%;
+}
+.promote_box .box2,
+.lyrics_box .box2{
+    width: 49.5%;
+}
 .promote_box .box1_img,
 .lyrics_box .box1_img{
-    width: 440px;
+    width: 100%;
     height: 250px;
     overflow: hidden;
 }
 .promote_box .box2_img,
 .lyrics_box .box2_img{
-    width: 665px;
+    width: 100%;
     height: 377px;
     overflow: hidden;
 }
-.promote_box .box1 img,
-.promote_box .box2 img,
-.lyrics_box .box1 img,
-.lyrics_box .box2 img{
-    width: 100%;
-    transition: 0.5s all ease-in-out;
+.promote_box .box1__img,
+.promote_box .box2__img,
+.lyrics_box .box1__img,
+.lyrics_box .box2__img{
+    transition: 0.5s all ease-in-out;   
 }
-.promote_box .box1:hover img,
-.promote_box .box2:hover img,
-.lyrics_box .box1:hover img,
-.lyrics_box .box2:hover img{
+.promote_box .box1__img,
+.promote_box .box2__img,
+.lyrics_box .box1__img,
+.lyrics_box .box2__img{
+    width: 100%;
+    height: 100%;
+    background-repeat: repeat-x;
+    background-size: cover;
+    background-position: center center;
+}
+
+.promote_box .box11_img{background-image: url(../images/promote/promote1.png);}
+.promote_box .box12_img{background-image: url(../images/promote/promote1.png);}
+.promote_box .box13_img{background-image: url(../images/promote/promote1.png);}
+.promote_box .box21_img{background-image: url(../images/promote/promote1.png);}
+.promote_box .box22_img{background-image: url(../images/promote/promote1.png);}
+.lyrics_box .box11_img{background-image: url(../images/promote/promote1.png);}
+.lyrics_box .box12_img{background-image: url(../images/promote/promote1.png);}
+.lyrics_box .box13_img{background-image: url(../images/promote/promote1.png);}
+.lyrics_box .box21_img{background-image: url(../images/promote/promote1.png);}.lyricse_box .box22_img{background-image: url(../images/promote/promote1.png);}
+.lyrics_box .box22_img{background-image: url(../images/promote/promote1.png);}.lyricse_box .box22_img{background-image: url(../images/promote/promote1.png);}
+
+
+.promote_box .box1:hover .box1__img,
+.promote_box .box2:hover .box2__img,
+.lyrics_box .box1:hover .box1__img,
+.lyrics_box .box2:hover .box2__img{
     transform: scale(1.03);
 }
 .promote_box .box1:hover span,
@@ -284,11 +352,18 @@ article{
 }
 
 /* footer */
+footer{
+    width: 100%;
+}
+.footer-container{
+    width: min(1340px, 100%);
+}
 .footer__payment{
     margin: 50px 0 20px 0;
 }
 .footer__payment ul{
     gap: 10px;
+    flex-wrap: wrap;
 }
 .footer__copyright{
     color: #fff;
@@ -301,3 +376,111 @@ article{
     text-decoration: none;
     font-weight: 400;
 }
+
+/* responsive */
+@media screen and (max-width: 900px){
+    .advertise_box .box1:last-child, 
+    .advertise_box .box2:last-child{
+        display: none;
+    }
+    .advertise_box .box1, 
+    .advertise_box .box2{
+        width: 49.5%;
+        height: 150px;
+    }
+    .advertise_box .box2,
+    .promote_box .box2_img,
+    .lyrics_box .box2_img{
+        height: 200px;
+    }
+    .promote_box .box1_img,
+    .lyrics_box .box1_img{
+        height: 150px;
+    }
+}
+@media screen and (max-width: 768px){
+    .header-account{
+        display: none;
+    }
+    .header-container{
+        position: relative;
+        margin: 20px 0;
+    }
+    
+    .header-container h1{
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .hamburger{
+        display: block;
+        position: absolute;
+    }
+    .hamburger.active .hbg-bar:nth-child(2){
+        opacity: 0;
+    }
+    .hamburger.active .hbg-bar:nth-child(1){
+        transform: translate(50%, 12px) rotate(45deg);
+    }
+    .hamburger.active .hbg-bar:nth-child(3){
+        transform: translate(50%, -2px) rotate(-45deg);
+    }
+    .header-container nav{
+        flex-direction: column;
+        position: fixed;
+        top: 105px;
+        background-color: black;
+        width: 80%;
+        height: 100vh;
+        left: -100%;
+        transition: 0.3s;
+    }
+    .header-container nav.active{
+        left: 0;
+    }
+    .promote_box .box1:last-child,
+    .lyrics_box .box1:last-child{
+        display: none;
+    }
+    .promote_box .box1,
+    .lyrics_box .box1{
+        width: 49.5%;
+    }
+    .promote_box .box1_img,
+    .lyrics_box .box1_img,
+    .promote_box .box2_img,
+    .lyrics_box .box2_img{
+        height: 100px;
+    }
+    .promote_box .row01,
+    .promote_box .row02,
+    .lyrics_box .row01,
+    .lyrics_box .row02{
+        padding: 0 20px 10px;
+    }
+    .banner-title{
+        font-size: 24px;
+        text-align: center;
+    }
+    .banner-text{
+        padding: 0 40px;
+    }
+    .advertise h2,
+    .enterprise h2{
+        font-size: 24px;
+    }
+    .promote h3,
+    .lyrics h3{
+        font-size: 20px;
+        text-align: center;
+    }
+    .lyrics{
+        margin-top: 40px;
+    }
+    .lyrics>span,
+    .enterprise span{
+        display: block;
+        padding: 0 20px 20px ;
+    }
+}
+    
